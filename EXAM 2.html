@@ -1,0 +1,146 @@
+<!--<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script>
+        /* Input: 3 numbers from user.
+         * Processing: A loop to count from start to end each integer that is evenly divisible by the given divisor.
+         * Output: All the numbers between start and end that are divisible by the given divisor.
+         */
+
+        function count() {
+
+            // Receive starting number, ending number, and divisor from user.
+
+            let start = parseInt(document.getElementById('startInput').value);
+            let end = parseInt(document.getElementById('endInput').value);
+            let divisor = parseInt(document.getElementById('divisorInput').value);
+
+            // Calculate all the numbers between start and end that are divisible by the given divisor.
+
+            let set = '';
+            let i = 0;
+            let remainder = i % divisor;
+            do {
+                set += i + ' ';
+                i += 1;
+            }
+                while (i >= start && i <= end && remainder == 0); 
+            
+
+                // Output all numbers between start and end that are divisible by the given divisor, separated by spaces.
+
+                document.getElementById('output').innerHTML = set;
+
+        }
+
+    </script>
+</head>
+
+<body>
+    Start: <input type="text" id="startInput" size="5"><br>
+    End: <input type="text" id="endInput" size="5"><br>
+    Divisor: <input type="text" id="divisorInput" size="5"><br>
+    <button type="button" onclick="count()">Click</button>
+    <div id="output"></div>
+</body>
+
+</html>-->
+
+<!--<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script>
+        /* Input: 2 numbers from the user.
+         * Processing: Determin if the 2 numbers are both greater than 5 or if the sum of the numbers is greater than 20.
+         * Output: True of False to the user based on the processing result.
+         */
+
+         function fives(){
+
+             // Receive the 2 numbers from the user.
+
+             let one = parseFloat(document.getElementById('oneInput').value);
+             let two = parseFloat(document.getElementById('twoInput').value);
+
+             // Determine if the 2 numbers are both greater than 5 or the sum of the numbers is greater than 20.
+
+             let message;
+             if (one > 5 && two > 5 || one + two > 20) {
+                 message = 'True';
+             }
+             else {
+                 message = 'False';
+             }
+
+             // Output message to user.
+
+             document.getElementById('output').innerHTML = message;
+         }
+
+    </script>
+</head>
+
+<body>
+    Please enter two numbers:
+    <input type="text" id="oneInput" size="5">
+    <input type="text" id="twoInput" size="5">
+    <button type="button" onclick="fives()">Click</button>
+    <div id="output"></div>
+</body>
+
+</html>-->
+
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+    <script>
+        /* Input: 3 numbers from user.
+         * Processing: A loop to count from start to end each integer that is evenly divisible by the given divisor.
+         * Output: All the numbers between start and end that are divisible by the given divisor.
+         */
+
+        function count() {
+
+            // Receive starting number, ending number, and divisor from user.
+
+            let start = parseInt(document.getElementById('startInput').value);
+            let end = parseInt(document.getElementById('endInput').value);
+            let divisor = parseInt(document.getElementById('divisorInput').value);
+
+            // Calculate all the numbers between start and end that are divisible by the given divisor.
+
+            let set = '';
+            for (i = start; i <= end; i++) {
+                if( i % divisor == 0) {
+                    set += i + ' ';
+                }
+            }
+            
+
+                // Output all numbers between start and end that are divisible by the given divisor, separated by spaces.
+
+                document.getElementById('output').innerHTML = set;
+
+        }
+
+    </script>
+</head>
+
+<body>
+    Start: <input type="text" id="startInput" size="5"><br>
+    End: <input type="text" id="endInput" size="5"><br>
+    Divisor: <input type="text" id="divisorInput" size="5"><br>
+    <button type="button" onclick="count()">Click</button>
+    <div id="output"></div>
+</body>
+
+</html>

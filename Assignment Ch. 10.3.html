@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang='en-us'>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Title</title>
+    <script>
+        'use strict';
+
+        /* Defining table
+         * Input: An array.
+         * Processing: Multiply each number in the array by a given number.
+         * Output: Display the new array to the user.
+         */
+
+        // Replace each number in the array with the product of that number multiplied by a given number.
+        function multiply(list, multiplier) {
+            return list.map(function (list) {
+                return list * multiplier;
+            });
+        }
+
+        // Call function and display output to user.
+        function q4() {
+            let list = [17, 8, 9, 5, 20]; // Insert array numbers here.
+            let products = multiply(list, 3);
+
+            document.getElementById('output').innerHTML = products;
+        }
+
+    </script>
+</head>
+
+<body>
+    <button type='button' onclick="q4()">Multiply Array</button>
+    <div id='output'></div>
+</body>
+
+</html>

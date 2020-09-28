@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang = 'en-us'>
+    <head>
+        <meta charset = 'utf-8'>
+        <title>New Sale</title>
+            <script>
+                'use strict';
+
+                /* Defining table 
+                 * Input: Subtotal of sale from user
+                 * Processing: 
+                 *  Determine if the day is Tuesday or Wednesday and if the subtotal is higher than $50. 
+                 *  If both are true, subtract 10% from subtotal then add sales tax (6%) and output total of sale
+                 *  Else add sales tax (6%) and output total of sale
+                 * Output: Total of sale
+                 */
+
+                let dayOfWeek = new Date().getDay();
+
+
+                function detSale() {
+
+                // Receive subtotal input from user.
+                let subtotal = parseFloat(document.getElementById('sub').value);
+
+                // Processing as above.
+                let total;
+                if (dayOfWeek == 2 || dayOfWeek == 3 && subtotal >= 50) { 
+                        total = (subtotal - (subtotal *  .1)) + ((subtotal - (subtotal *  .1)) * .06); 
+                }
+                else {
+                    total = subtotal + (subtotal * .06)
+                }
+
+                // Output total of Sale
+                document.getElementById('outputDiv').innerHTML = total;
+            }
+                 
+            </script>
+    </head>
+    <body>
+        Subtotal: <input type = 'text' id = 'sub' size = 7><br><br>
+        <button type = 'button' onclick = "detSale()">Total</button><br><br>
+        <div id = 'outputDiv'></div>
+    </body>
+</html>

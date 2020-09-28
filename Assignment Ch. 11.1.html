@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang='en-us'>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Title</title>
+    <script>
+        'use strict';
+
+        /* Defining table
+         * Input: Two dates from the user in YYYY/MM/DD format.
+         * Processing: Find the difference in days between the two dates.
+         * Output: Display the difference in days to the user.
+         */
+
+         function difference() {
+
+            // Receive the date from the user.
+            let date1 = new Date(document.getElementById('date1').value);
+            let date2 = new Date(document.getElementById('date2').value);
+
+            // Determine the day of the week for the given date.
+            let day1 = date1.getTime();
+
+            let day2 = date2.getTime();
+
+            let difference = day2 - day1;
+
+            let result = difference / 86400000;
+            
+
+            // Output the result to the user.
+            document.getElementById('output').innerHTML = result;
+
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+    Please enter your dates in YYYY/MM/DD format and in chronological order<br><br>
+    First Date: <input type='text' id='date1'><br><br>
+    Second Date: <input type='text' id='date2'><br><br>
+    <button type='button' onclick="difference()">Difference in days</button><br><br>
+    <div id='output'></div>
+</body>
+
+</html>

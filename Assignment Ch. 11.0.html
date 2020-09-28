@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html lang='en-us'>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Title</title>
+    <script>
+        'use strict';
+
+        /* Defining table
+         * Input: A date from the user in YYYY/MM/DD format.
+         * Processing: Determine the day of the week that the given date is.
+         * Output: Display the day of the week to the user.
+         */
+
+         function dayOfWeek() {
+
+            // Receive the date from the user.
+            let date = new Date(document.getElementById('date').value); // Code runs but pull date one day before the date input by user for some reason???
+
+            // Determine the day of the week for the given date.
+            let result = date.getDay();
+            if (result == 0) {
+                result = 'Sunday';
+            }
+
+            if (result == 1) {
+                result = 'Monday';
+            }
+
+            if (result == 2) {
+                result = 'Tuesday';
+            }
+
+            if (result == 3) {
+                result = 'Wednesday';
+            }
+
+            if (result == 4) {
+                result = 'Thursday';
+            }
+
+            if (result == 5) {
+                result = 'Friday';
+            }
+
+            if (result == 6) {
+                result = 'Saturday';
+            }
+
+            // Output the result to the user.
+            document.getElementById('output').innerHTML = result;
+
+        }
+
+
+
+    </script>
+</head>
+
+<body>
+    Please enter a date in YYYY/MM/DD format: <br><br><input type='text' id='date'><br><br>
+    <button type='button' onclick="dayOfWeek()">Day of week</button><br><br>
+    <div id='output'></div>
+</body>
+
+</html>

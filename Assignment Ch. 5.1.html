@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html lang = 'en-us'>
+    <head>
+        <meta charset = 'utf-8'>
+        <title>Quarts to liters</title>
+            <script>
+                'use strict';
+
+                /* Defining table 
+                 * Input: Starting and ending odometer readings and gallons of gasoline used.
+                 * Processing: Calculate miles per gallon.
+                 * Output: Display the miles per gallon to the user.
+                 */
+
+                function mpg() { 
+                 // Get starting and ending odometer readings and gallons used from user.
+                 let o1 = parseFloat(document.getElementById('o1Input').value);
+                 let o2 = parseFloat(document.getElementById('o2Input').value);
+                 let gallons = parseFloat(document.getElementById('gallons').value);
+
+                 // Calculate miles per gallon.
+                 let mpg = (o2 - o1) / gallons + ' Miles Per Gallon (MPG)';
+
+                 // Display miles per gallon to the user.
+                 document.getElementById('output').innerHTML = mpg;
+                }
+
+            </script>
+    </head>
+    <body>
+        Starting Odometer: <input type = 'text' id = 'o1Input'><br><br>
+        Ending Odometer: <input type = 'text' id = 'o2Input'><br><br>
+        Gallons Used: <input type = 'text' id = 'gallons'><br><br>
+        <button type = 'button' onclick = 'mpg()'>MPG</button>
+        <div id = 'output'></div> 
+    </body>
+</html>

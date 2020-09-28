@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang='en-us'>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Title</title>
+    <script>
+        'use strict';
+
+        /* Defining table
+         * Input: An array.
+         * Processing: Count how many numbers in the array are even.
+         * Output: Display the number of even numbers in the array to the user.
+         */
+
+        // Count and display the number of even numbers in the array.
+        function countEvens(list) {
+            let count = 0;
+            for (let i = 0; i < list.length; i++) {
+                if (list[i] % 2 == 0) {
+                    count++;
+                }
+            }
+            return count;
+        }
+
+        // Call function and display output to user.
+        function q3() {
+            let list = [12, -4, 8, 15, 17, -5, 20, 11]; // Insert array numbers here.
+            let count = countEvens(list);
+
+            document.getElementById('output').innerHTML = count;
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <button type='button' onclick="q3()">Count Evens</button>
+    <div id='output'></div>
+</body>
+
+</html>

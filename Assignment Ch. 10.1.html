@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang='en-us'>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Title</title>
+    <script>
+        'use strict';
+
+        /* Defining table
+         * Input: An array.
+         * Processing: Determine the number in the middle element of the array if the number of elements is odd.
+                            If the number of indexes is even, determine the middle number between the numbers in the middle two indexes.
+         * Output: Display the middle number to the user.
+         */
+
+        // Determine the middle number of an array if list.length is odd, determine the middle value between the two middle numbers if list.length is even.
+        function getMiddle(list) {
+            if (list.length % 2 == 0) {
+                let middle = list.length / 2;
+                return (list[middle] + list[middle - 1]) / 2;
+            }
+            else {
+                return list[Math.round((list.length - 1) / 2)];
+            }
+        }
+
+        // Call function and display output to user.
+        function q2() {
+            let list = [17, 8, 9, 5, 20]; // Insert array numbers here.
+            let value = getMiddle(list);
+
+            document.getElementById('output').innerHTML = value;
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <button type='button' onclick="q2()">Get Middle</button>
+    <div id='output'></div>
+</body>
+
+</html>

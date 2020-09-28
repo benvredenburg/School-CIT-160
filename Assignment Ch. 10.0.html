@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang='en-us'>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Title</title>
+    <script>
+        'use strict';
+
+        /* Defining table
+         * Input: An Array.
+         * Processing: Add the first and last numbers in the array.
+         * Output: Display the sum of the two numbers to the user.
+         */
+
+        function addEnds(list) {
+
+            // Store first and last number of the array.
+            let first = list[0];
+            let last = list[list.length - 1];
+
+            // Calculate the sum of the first and last numbers of the array.
+            let sum = first + last;
+
+            return sum;
+        }
+
+        // Call function and display output to user.
+        function q1() {
+            let list = [-3, 0, 7.1, 5]; // Insert array numbers here.
+            let value = addEnds(list);
+
+            document.getElementById('output').innerHTML = value;
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <button type='button' onclick="q1()">Add Ends</button>
+    <div id='output'></div>
+</body>
+
+</html>

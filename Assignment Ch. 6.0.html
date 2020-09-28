@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang = 'en-us'>
+    <head>
+        <meta charset = 'utf-8'>
+        <title>What Footwear should I Wear Today?</title>
+            <script>
+                'use strict';
+
+                /* Defining table 
+                 * Input: The weather where the user is located.
+                 * Processing: Determine the best footwear for the weather input by user.
+                 * Output: Footwear choice.
+                 */
+
+                 function footwearChoice() {
+                     // Get the weather from the user.
+                     let weather = document.getElementById('weatherInput').value;
+
+                     // Choose footwear.
+                     let message;
+                     if (weather == 'hot'){
+                         message = 'you should wear sandals';
+                     }
+                     else if (weather == 'rain'){
+                         message = 'you should wear galoshes';
+                     }
+                     else if (weather == 'snow'){
+                         message = 'you should wear boots';
+                     }
+                     else {
+                         message = 'you should wear shoes';
+                     }
+
+                     // Display footwear choice to user.
+                     document.getElementById('outputDiv').innerHTML = message;
+                 }
+            </script>
+    </head>
+    <body>
+        Today's weather: <input type = 'text' id = 'weatherInput'><br><br>
+        <button type = 'button' onclick = "footwearChoice()">What should I wear?</button>
+        <div id = 'outputDiv'></div>
+    </body>
+</html>

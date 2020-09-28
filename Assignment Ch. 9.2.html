@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang='en-us'>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Investment Calculator</title>
+    <script>
+        'use strict';
+
+        /* Defining table
+         * Input: Get Principal. Rate, Years, Periods, and NumberOfPaymentsPaidToDate from user.
+         * Processing: Compute the Payment amout the user needs to make each month and the Payoff amount for the loan.
+         * Output: Display Payment amount and Payoff amount to user.
+         */
+
+         function computePayment(principal, rate, years, periods) {
+             let payment = '$' + Math.round((principal * (rate / periods)) / (1 - Math.pow(1 + (rate / periods), - (years * periods))) *100) / 100;
+             return payment;
+         }
+
+         function computeBalance(principal, rate, years, periods, paymentsMade) {
+             let balance = Math.round((principal * Math.pow(1 + (rate / periods), paymentsMade)) - ((principal * (rate / periods)) / (1 - Math.pow(1 + (rate / periods), - (years * periods))) * (Math.pow(1 + (rate / periods), paymentsMade) - 1) / (rate / periods) * 100) / 100);
+             return balance;
+         }
+
+         function doPayment() {
+            // Get Principal. Rate, Years, Periods, and NumberOfPaymentsPaidToDate from user. 
+            let principal = parseFloat(document.getElementById('principalInput').value);
+            let rate = parseFloat(document.getElementById('annualRateInput').value);
+            let years = parseFloat(document.getElementById('yearsInput').value);
+            let periods = parseFloat(document.getElementById('periodsInput').value); 
+
+            // Call the ComputePayment function.
+            let payment = computePayment(principal, rate, years, periods);
+
+            // Output Payment amount to user.
+            document.getElementById('outputPayment').innerHTML = payment;
+         }
+
+         function doBalance() {
+             // Get Principal. Rate, Years, Periods, and NumberOfPaymentsPaidToDate from user. 
+            let principal = parseFloat(document.getElementById('principalInput').value);
+            let rate = parseFloat(document.getElementById('annualRateInput').value);
+            let years = parseFloat(document.getElementById('yearsInput').value);
+            let periods = parseFloat(document.getElementById('periodsInput').value); 
+            let paymentsMade = parseFloat(document.getElementById('paymentsMadeInput').value);
+
+            // Call the ComputeBalance function.
+            let balance = computeBalance(principal, rate, years, periods, paymentsMade);
+
+            // Output Remaining balance to user.
+            document.getElementById('outputPayoff').innerHTML = balance;
+         }
+
+         
+
+
+
+    </script>
+</head>
+
+<body>
+    <h2>Loan Calculator</h2>
+    <label for='prinicpalInput'>Amount borrowed (principal): </label>
+    <input type='text' id='principalInput' size = '5'><br><br>
+    <label for='annualRateInput'>Annual interest rate (example: .065): </label>
+    <input type='text' id='annualRateInput' size = '5'><br><br>
+    <label for='yearsInput'>Number of Years: </label>
+    <input type='text' id='yearsInput' size = '5'><br><br>
+    <label for='periodsInput'>Payments per year: </label>
+    <input type='text' id='periodsInput' size = '5'><br><br>
+    <button type='button' onclick="doPayment()">Compute payment</button><br><br>
+    <div id='outputPayment'></div><br>
+    <label for='paymentsMadeInput'>Number of payments paid to date: </label>
+    <input type='text' id='paymentsMadeInput' size = '5'><br><br>
+    <button type='button' onclick="doBalance()">Compute payoff amount</button><br><br>
+    <div id='outputPayoff'></div>
+</body>
+
+</html>

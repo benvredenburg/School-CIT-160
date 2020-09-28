@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang = 'en-us'>
+    <head>
+        <meta charset = 'utf-8'>
+        <title>Test Your Math Skills!</title>
+            <script>
+                'use strict';
+
+                /* Defining table 
+                 * Input: 2 numbers, an arithmetic operator, and an answer for a math equation
+                 * Processing: Compare the answer given to the equation created and determine if the answer is correct
+                 * Output: Whether the answer was correct or not
+                 */
+
+                 function checkAnswer(){
+                    // Get first and second number, arithmetic operator, and answer from user.
+                    let num1 = parseFloat(document.getElementById('firstNumberInput').value);
+                    let op = document.getElementById('opInput').value;
+                    let num2 = parseFloat(document.getElementById('secondNumberInput').value);
+                    let ans = parseFloat(document.getElementById('ansInput').value);
+
+                    // Compare the given answer to the given equation and determine if the answer is correct.
+                    let message;
+                    if (op == '+'){
+                        if ((ans - num2) == num1)
+                            message = 'Correct! Good job.';
+                        else 
+                            message = 'Incorrect. Try again!';
+                    }
+                    if (op == '-'){
+                        if ((ans + num2) == num1)
+                            message = 'Correct! Good job.';
+                        else 
+                            message = 'Incorrect. Try again!';
+                    }
+                    if (op == '*'){
+                        if ((ans / num2) == num1)
+                            message = 'Correct! Good job.';
+                        else 
+                            message = 'Incorrect. Try again!';
+                    }
+                    if (op == '/'){
+                        if ((ans * num2) == num1)
+                            message = 'Correct! Good job.';
+                        else 
+                            message = 'Incorrect. Try again!';
+                    }
+
+                    // Let user know if their answer is correct or not.
+                    document.getElementById('outputDiv').innerHTML = message
+                 }
+
+                 
+            </script>
+    </head>
+    <body>
+        <h1>Test Your Math Skills!</h1>
+        <input type = 'text' id = 'firstNumberInput' size = 3 style = 'text-align: center'>
+        <input type = 'text' id = 'opInput' size = 1 style = 'text-align: center'>
+        <input type = 'text' id = 'secondNumberInput' size = 3 style = 'text-align: center'>
+        = <input type = 'text' id = 'ansInput' size = 4 style = 'text-align: center'><br><br>
+        <button type = 'button' onclick = "checkAnswer()">Check</button>
+        <div id = 'outputDiv'></div>
+    </body>
+</html>

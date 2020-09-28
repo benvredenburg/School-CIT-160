@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<HTML lang="en-us" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
+    <head>
+        <meta charset="utf-8">
+        <title>Library Book Reviews</title>
+    </head>
+    <body>
+        <h1><u>Madison County Library</u></h1>
+        <p>
+            Book Title: <input type="text" id="bkttl">
+        </p>
+        <p>
+            Reviewer Name: <input type="text" id="rvwr">
+        </p>
+        <p>
+            Review:<br>
+            <textarea id="rvw" rows="10" cols="50" ></textarea>
+        </p>
+        <p>
+            <button type="button" onclick="submitReview()">Submit</button>
+            <button type="button" onclick="cancelReview()">Cancel</button>
+        </p>
+        <div id="output">Thank you for your submission</div>
+    </body>
+
+</HTML>

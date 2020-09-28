@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang = 'en-us'>
+    <head>
+        <meta charset = 'utf-8'>
+        <title>Title</title>
+            <script>
+                'use strict';
+
+                /* Defining table 
+                 * Input: N/A
+                 * Processing: Calculate 2 ^ i for each iteration of the loop
+                 * Output: Powers of 2 up to 31
+                 */
+
+                 function exponentiation() {
+
+                 // No input.
+
+                 // Calculate 2 ^ i for each iteration of the loop
+                 let answer = '';
+                 for (let i = 0; i < 32; i++) {
+                     answer = answer + (Math.pow(2, i)) + '<br>';
+                 }
+
+                 // Display the powere of 2 up to 31 on button click
+                 document.getElementById('outputDiv').innerHTML = answer;
+                 }
+
+                 
+            </script>
+    </head>
+    <body>
+        <button type = 'button' onclick = "exponentiation()">Powers of 2</button>
+        <div id = 'outputDiv'></div>
+    </body>
+</html>

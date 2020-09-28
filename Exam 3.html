@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html lang='en-us'>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Title</title>
+    <script>
+        'use strict';
+
+        /* Defining table
+         * Input:
+         * Processing:
+         * Output:
+         */
+
+        function golfScore(hand) {
+            let score = 0;
+            for (let i = 0; i < hand.length; i++) {
+                // Get one card value from the array.
+                let card = hand[i];
+
+                // Process jacks, queens, and kings.
+                if (card == 'jack' || card == 'Queen' || card == 'King') {
+                    card == 10;
+                }
+
+                // Add the card value to the score.
+                score += card;
+            }
+
+            return score;
+        }
+
+        /* Create and return an array with cards values in it. */
+        function makeDeck() {
+            let deck = [
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King',
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King',
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King',
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 'Jack', 'Queen', 'King'
+            ];
+            return deck;
+        }
+
+        function shuffle(deck) {
+            for (let i = deck.length - 1; i >= 1; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                let swap = deck[j];
+                deck[j] = deck[i];
+                deck[i] = swap;
+            }
+            return deck;
+        }
+        
+        function test() {
+            // Call the makeDeck function.
+            let deck = makeDeck();
+
+            // Call the shuffle function.
+            deck = shuffle(deck);
+
+            document.getElementById('outputDiv').innerHTML = deck;
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <button type='button' onclick="test()">Button</button>
+    <div id='outputDiv'></div>
+</body>
+
+</html>

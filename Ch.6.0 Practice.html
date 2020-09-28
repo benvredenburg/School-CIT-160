@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html lang = 'en-us'>
+    <head>
+        <meta charset = 'utf-8'>
+        <title>Title</title>
+            <script>
+                'use strict';
+
+                /* Defining table 
+                 * Input: Patron status and # of overdue books
+                 * Processing: Set of nested if statements
+                    if patron status
+                        in # of overdue books
+                 * Output: Book loan duration
+                 */
+
+                 function loanLength() {
+                     // Get the patron type and number of overdue books from user
+                     let patron = document.getElementById('patron').value;
+                     let books = parseInt(document.getElementById('books').value);
+
+                     let weeks;
+                     if (patron == 'student') {
+                         if (books == 0){
+                             weeks = 6;
+                         }
+                         else if (books < 3) {
+                             weeks = 4;
+                         }
+                         else {
+                             weeks = 2;
+                         }
+
+                     }
+                     else if (patron == 'faculty') {
+                        if (books == 0){
+                             weeks = 16;
+                         }
+                         else if (books < 3) {
+                             weeks = 12;
+                         }
+                         else {
+                             weeks = 8;
+                         }
+                     }
+                     else {
+                        if (books == 0){
+                             weeks = 4;
+                         }
+                         else if (books < 3) {
+                             weeks = 3;
+                         }
+                         else {
+                             weeks = 2;
+                         }
+                     }
+
+                     // Display the loan weeks for the user to see.
+                     document.getElementById('outputDiv').innerHTML = weeks;
+                 }
+
+                 
+            </script>
+    </head>
+    <body>
+        Patron type: <input type = 'text' id = 'patron'><br><br>
+        # of overdue books in past year: <input type = 'text' id = 'books' size = '2'><br><br>
+        <button type = 'button' onclick = "loanLength()">Weeks</button><br><br>
+        Number of weeks for loan: <div id = 'outputDiv'></div>
+    </body>
+</html>

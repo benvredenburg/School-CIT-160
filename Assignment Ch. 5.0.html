@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang = 'en-us'>
+    <head>
+        <meta charset = 'utf-8'>
+        <title>Quarts to liters</title>
+            <script>
+                'use strict';
+
+                /* Defining table 
+                 * Input: Volume in quarts.
+                 * Processing: Convert quarts into liters.
+                 * Output: Volume in liters
+                 */
+
+                function qrts2ltrs() { 
+                 // Get volume in quarts from the user.
+                 let quarts = parseFloat(document.getElementById('volumeInput').value);
+
+                 // Convert volume in quarts into liters.
+                 let liters = quarts * 0.946353 + ' Liters';
+
+                 // Display Volume in liters to the user.
+                 document.getElementById('output').innerHTML = liters;
+                }
+
+            </script>
+    </head>
+    <body>
+        Quarts: <input type = 'text' id = 'volumeInput'>
+        <button type = 'button' onclick = "qrts2ltrs()">=</button>
+        <div id = 'output'></div> 
+    </body>
+</html>

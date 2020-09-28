@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang = 'en-us'>
+    <head>
+        <meta charset = 'utf-8'>
+        <title>Odd Addition</title>
+            <script>
+                'use strict';
+
+                /* Defining table 
+                 * Input: A number 'n' from the user.
+                 * Processing: Determine every odd number between 1 and 'n' then add those numbers together.
+                 * Output: The sum of every odd number between 1 and 'n'.
+                 */
+
+                 function oddAddition() {
+
+                     // Receive a number from the user.
+                     let n = parseInt(document.getElementById('numberInput').value);
+
+                     // Determine every odd number between 1 and 'n' then add them together.
+                     let sum = 0;
+                     for (let i = 1; i <= n; i += 2) {
+                        if (n == 0) {
+                            break;
+                        }
+                        sum += i;
+                     }                   
+
+                     // Output the sum of the odd numbers to the user.
+                     document.getElementById('outputDiv').innerHTML = sum;
+
+                 }
+
+                 
+            </script>
+    </head>
+    <body>
+        Enter a Number: <input type = 'text' id = 'numberInput'><br><br>
+        <button type = 'button' onclick = 'oddAddition()'>Add</button><br><br>
+        <div id = 'outputDiv'></div>
+    </body>
+</html>

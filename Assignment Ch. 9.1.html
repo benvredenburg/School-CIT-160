@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang='en-us'>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Investment Calculator</title>
+    <script>
+        'use strict';
+
+        /* Defining table
+         * Input: Get Principal, Annual Rate, Number of Years, and Periods per Year from the user.
+         * Processing: Compute the Future Value from the given inputs.
+         * Output: Display the Future Value to the user.
+         */
+
+        // Equate Future Value.
+        function computeFutureValue(principal, rate, years, periods) {
+            let futureValue = Math.round((principal * Math.pow(1 + (rate / periods), (years * periods))) * 100) / 100;
+            return futureValue;
+        }
+
+        function doFV() {
+
+            // Get principal, annual rate, number of years, and periods per year from user.
+            let principal = parseFloat(document.getElementById('principalInput').value);
+            let rate = parseFloat(document.getElementById('annualRateInput').value);
+            let years = parseFloat(document.getElementById('yearsInput').value);
+            let periods = parseFloat(document.getElementById('periodsInput').value);
+
+            // Call the computeFutureValue function.
+            let futureValue = computeFutureValue(principal, rate, years, periods);
+
+            // Output Future Value to user.
+            document.getElementById('output').innerHTML = futureValue;
+        }
+
+
+
+
+    </script>
+</head>
+
+<body>
+    <h2>Investment Calculator</h2>
+    <label for='prinicpalInput'>Amount invested (principal): </label>
+    <input type='text' id='principalInput'><br><br>
+    <label for='annualRateInput'>Annual rate (example: .08): </label>
+    <input type='text' id='annualRateInput'><br><br>
+    <label for='yearsInput'>Number of Years: </label>
+    <input type='text' id='yearsInput'><br><br>
+    <label for='periodsInput'>Periods per year: </label>
+    <input type='text' id='periodsInput'><br><br>
+    <button type='button' onclick="doFV()">Compute future value</button>
+    <div id='output'></div>
+</body>
+
+</html>

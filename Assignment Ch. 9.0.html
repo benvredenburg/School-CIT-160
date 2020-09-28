@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang='en-us'>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Wind Chill Calculator</title>
+    <script>
+        'use strict';
+
+        /* Defining table
+         * Input: Get Temperature and Wind speed from user.
+         * Processing: Determine the windchill factor.
+         * Output: Display the temperature to the user once windchill has been added to the equation.
+         */
+
+        // Equate the wind chill
+        function windChill(tempF, speed) {
+            let result = 35.74 + (0.6215 * tempF) - (35.75 * Math.pow(speed, 0.16)) + (0.4275 * tempF * Math.pow(speed, 0.16));
+            return result;
+        }
+
+        function doInputOutput() {
+
+            // get temperature and windspeed from user.
+            let tempF = parseFloat(document.getElementById('temperatureInput').value);
+            let speed = parseFloat(document.getElementById('windSpeedInput').value);
+
+            // Call the windChill function.
+            let result = windChill(tempF, speed);
+            
+            // Display the temperature to the user.
+            document.getElementById('output').innerHTML = result;
+
+
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <label for='temperatureInput'>Temperature: </label>
+    <input type='text' id='temperatureInput'><br><br>
+    <label for='windSpeedInput'>Wind Speed: </label>
+    <input type='text' id='windSpeedInput'><br><br>
+    <button type='button' onclick="doInputOutput()">Wind Chill</button>
+    <div id='output'></div>
+</body>
+
+</html>

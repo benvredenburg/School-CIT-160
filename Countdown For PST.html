@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <style>
+        p {
+            text-align: center;
+            font-size: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>
+        <center>How much time until next game?</center>
+    </h1>
+    <p id="timeRemaining"></p>
+    <script>
+        let deadline = new Date("jul 12, 2020 08:00:00").getTime();
+        let limit = setInterval(function () {
+            let now = new Date().getTime();
+            let t = deadline - now;
+            let days = Math.floor(t / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((t % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((t % (1000 * 60)) / 1000);
+            document.getElementById("timeRemaining").innerHTML = days + "d "
+                + hours + "h " + minutes + "m " + seconds + "s ";
+            if (t < 0) {
+                clearInterval(limit);
+                document.getElementById("timeRemaining").innerHTML = "Game Time!";
+            }
+        }, 1); 
+    </script>
+
+</body>
+
+</html>

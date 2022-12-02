@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang='en-us'>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Title</title>
+    <script type='text/javascript' src='draw.js'></script>
+
+    <script>
+        'use strict';
+
+        /* Defining table
+         * Input:
+         * Processing:
+         * Output:
+         */
+
+         function drawSnowman() {
+             let canvas = document.getElementById('picture');
+             let lightblue = makeColor3(128, 128, 255);
+
+             // Declare two variables for the center of the snowman's head.
+             let headX = 200; 
+             let headY = 100; 
+
+             // Draw the snowman's head.
+             fillCircle(canvas, headX, headY, 40, lightblue);
+
+             // Draw the snowman's body.
+             fillCircle(canvas, headX, headY + 90, 60, lightblue);
+
+             // Draw the snowman's feet.
+             fillCircle(canvas, headX, headY + 220, 80, lightblue);
+         }
+
+    </script>
+</head>
+
+<body>
+    <button type='button' onclick="drawSnowman()">Draw</button>
+    <canvas id='picture' width='600' height='400' style='border: 1px solid'></canvas>
+</body>
+
+</html>
